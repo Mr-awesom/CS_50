@@ -1,26 +1,30 @@
 #include <stdio.h>
 
+void print_row (int n);
+void print_square (int n);
+
 int main (void)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        printf("?");
-    }
-    printf("\n");
-
-    for (int i = 0; i < 3; i++)
-    {
-        printf("?\n");
-    }
-
-    for (int row = 0; row < 3; row++)
-    {
-        for (int col = 0; col < 3; col++)
-        {
-            printf("#");
-        }
-        printf("\n");
-    }
+    int n;
+    printf("Enter the size of the square: ");
+    scanf("%d", &n);
+    print_square(n);
 }
 
 
+void print_row (int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("#");
+    }
+    printf("\n");
+}
+
+void print_square (int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        print_row(n);
+    }
+}
