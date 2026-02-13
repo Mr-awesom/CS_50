@@ -1,9 +1,16 @@
 #include <stdio.h>
 
 void meow(void);
+int get_positive_int(void);
 void oink(int n);
+
+
 int main(void)
 {
+
+    int no_of_times_to_print_oink = get_positive_int();
+    oink(no_of_times_to_print_oink);
+
     /*int i = 0;
     while ( i < 3 )
     {
@@ -20,7 +27,7 @@ int main(void)
     {       
     meow();
     }*/
-    int number;
+    /*int number;
     
     do 
     {
@@ -28,7 +35,7 @@ int main(void)
         scanf("%d", &number);
     }
     while (number < 1);
-    oink(number);
+    oink(number);*/
 
 }
 
@@ -43,4 +50,16 @@ void oink(int n)
     {
         printf("Oink\n");
     }
+}
+
+int get_positive_int(void)
+{
+    int n;
+    do
+    {
+        printf("Give a positive integer: ");
+        scanf("%d", &n);
+    }
+    while ( n < 1 );
+    return n;
 }
